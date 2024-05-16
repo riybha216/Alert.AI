@@ -1,23 +1,29 @@
 ## Context
 
-As high school kids enduring online school during pandemic we’ve felt the repercussions both mentally and physically. Sitting in front of a computer for extended amounts of time can cause pain in both the back and neck. Furthermore, it can be hard to focus with the lack of motivation that comes as a result of online school. 
+This project addresses a challenge faced by online educators: maintaining student attentiveness during virtual lectures.  Traditional online learning environments can struggle to replicate the focus and interaction found in physical classrooms. This can lead to decreased engagement and ultimately hinder learning outcomes.
 
 ## How It Works
 
-Alert.AI uses a posture machine learning model and eye recognition machine learning model in tandem with a scoring system that outputs a score out of a 100 to a teacher on how attentive each of their students are. In addition, graphs are given for each student, allowing for a graphical representation that shows the progression of engagement over a class period. On the student end, they are given reminders during class to pay attention when our machine learning model recognizes that they aren’t engaged through their posture. Concurrently, the model will allow students to be more alert about their posture to help prevent long-term effects of back and neck pain-two prevalent causes of stress.
+This platform aims to improve student focus and participation in online lectures by incorporating the following features:
+
+- Real-time Attention Monitoring: The platform utilizes posture and eye recognition models, built using Keras, to assess student engagement during lectures.
+- Engagement Prompts: Based on the attention models, real-time reminders are delivered to students when needed, prompting them to re-engage with the material.
+- Gamification: A gamified scoring system motivates students to stay focused and participate.
+- Engagement Visualization: Line graphs provide instructors with a visual representation of student engagement throughout the lecture, allowing them to adapt their teaching approach if needed.
+
+This combination of features creates a more interactive learning environment that encourages student participation and improves overall engagement.
 
 ## Run With Docker
 
-This method is easier, but can be less ideal for development depending on your specific setup. On a Windows computer, you will not be able to hot reload the code, meaning code changes will not be immediately reflected upon saving the file. This is not an issue on macs.
+While Docker offers a streamlined way to run the application, it might not be the most convenient choice for active development, depending on your setup. Here's why:
 
-However, using the docker environment will allow you to run all the different parts of the app with one command. Although the routing will probably be configured for the other environment because I'm doing most of the dev on a windows computer...
+- Hot Reloading: On Windows with Docker, code changes won't be automatically reflected (hot reload) like they might be on macOS. This means you'll need to rebuild and restart the container after every modification.
+However, Docker excels at running all application components with a single command, making it a great option for deployment.
 
-### Step 1
+Here's how to get started with Docker development:
 
-Install [DockerDesktop](https://www.docker.com/products/docker-desktop). Follow all instructions then continue to step 2.
+- Install Docker Desktop: Head over to Docker Desktop and follow the installation instructions.
 
-### Step 2
+- Run the Application: Once Docker is set up, navigate to the project's root directory in your terminal and execute docker-compose up. This command will build the necessary Docker images and launch them as a single environment.
 
-From the root of the repository, run `docker-compose up`
-
-This should build the different images and run them in one environment. If you are one a mac, code changes will be reflected (at least in the React App, haven't set up nodemon for Express) upon save (hot reload). If not, you will have to close the environment with 'docker-compose down' or exit the process with Ctrl+C in the terminal (VSCode Powershell). Can also be stopped from docker desktop.
+Hot Reload Note: Currently, hot reload functionality is likely only available for the React app on macOS. For other environments or operating systems, you'll need to rebuild and restart the container after making code changes. You can stop the environment using docker-compose down in the terminal or through Docker Desktop.
