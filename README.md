@@ -24,6 +24,6 @@ Here's how to get started with Docker development:
 
 - Install Docker Desktop: Head over to Docker Desktop and follow the installation instructions.
 
-- Run the Application: Once Docker is set up, navigate to the project's root directory in your terminal and execute docker-compose up. This command will build the necessary Docker images and launch them as a single environment.
+- Run the Application: Once Docker is set up, navigate to the project's root directory in your terminal and execute ```docker-compose up```. This command will build the necessary Docker images and launch them as a single environment.
 
-Hot Reload Note: Currently, hot reload functionality is likely only available for the React app on macOS. For other environments or operating systems, you'll need to rebuild and restart the container after making code changes. You can stop the environment using docker-compose down in the terminal or through Docker Desktop.
+Hot Reload Note: Currently, hot reload functionality is likely only available for the React app on macOS. For other environments or operating systems, you'll need to rebuild and restart the container after making code changes. You can stop the environment using ```docker-compose down``` in the terminal or through Docker Desktop.
